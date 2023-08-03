@@ -45,7 +45,7 @@ abstract class RemoteUseCase<P, R, FR>(val errorUtil: CloudErrorMapper) {
     }
 
 
-    fun unsubscribe() {
+    private fun unsubscribe() {
         parentJob.apply {
             cancelChildren()
             cancel()

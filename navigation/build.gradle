@@ -50,6 +50,7 @@ dependencies {
     implementation(Androidx.fragment)
     implementation(Androidx.legacy)
     kapt(Androidx.appcompat)
+    implementation(Androidx.workKtx)
 
     //Hilt
     implementation(Hilt.hilt_android)

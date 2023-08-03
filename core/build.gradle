@@ -26,6 +26,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -68,6 +73,7 @@ dependencies {
     implementation(Androidx.lifecycle_viewmodel)
     implementation(Androidx.activityKtx)
     implementation(Androidx.fragmentKtx)
+    implementation(Androidx.workKtx)
 
     //Hilt
     implementation(Hilt.hilt_android)

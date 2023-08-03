@@ -2,6 +2,7 @@ package com.examples.core.base.activity
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -14,19 +15,16 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener, Loading
     private lateinit var navController: NavController
 
     abstract var navGraphResourceId: Int
-    protected lateinit var bundle: Bundle
+    private lateinit var bundle: Bundle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_common)
         setNavFragment()
-//        btnBack.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
-//        when (view) {
-//            btnBack -> onBackPressed()
-//        }
+
     }
 
     private fun setNavFragment() {
@@ -37,7 +35,6 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener, Loading
             navController.setGraph(navGraphResourceId, bundle)
         else
             navController.setGraph(navGraphResourceId)
-//        tvtitle.text = navController.currentDestination?.label
     }
 
     @Deprecated("Deprecated in Java")
@@ -47,16 +44,10 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener, Loading
         }
     }
 
-    open fun changeBackButtonVisibility(isVisible: Boolean) {
-        /* when (isVisible) {
-             true ->
-                 btnBack.visibility = View.VISIBLE
-             false ->
-                 btnBack.visibility = View.GONE
-         }*/
-    }
 
     override fun showLoading(show: Boolean) {
-//        progressBar.visibility = if (show) View.VISIBLE else View.GONE
+        val progressBar: ProgressBar = findViewById(R.id.progressBar)
+        progressBar.visibility = if (show) View.VISIBLE else View.GONE
     }
+
 }

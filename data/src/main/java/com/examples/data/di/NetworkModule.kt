@@ -50,7 +50,7 @@ object NetworkModule {
             .addInterceptor { chain ->
                 val request = chain.request() //original request
                 val url = request.url().newBuilder() //modified url
-                    .addQueryParameter("api_key", Config.API_KEY)
+                    .addQueryParameter("access_key", Config.API_KEY)
                     .build()
                 val newRequest = request.newBuilder().url(url).build() // modified request
                 chain.proceed(newRequest)

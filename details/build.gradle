@@ -25,6 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -64,6 +70,7 @@ dependencies {
     implementation(Androidx.navigation_fragment)
     implementation(Androidx.navigation_ui)
     implementation(Androidx.lifecycle_viewmodel)
+    implementation(Androidx.workKtx)
 
     //Material
     implementation(Material.material)

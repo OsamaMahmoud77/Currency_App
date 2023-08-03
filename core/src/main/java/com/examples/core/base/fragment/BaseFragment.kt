@@ -9,16 +9,19 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.viewbinding.ViewBinding
 import com.examples.core.base.view_model.BaseViewModel
 import com.examples.core.utils.LoadingListener
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
-abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
+abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
+
+    private var _binding: VB? = null
+    val binding get() = _binding!!
 
     private val TAG = BaseFragment::class.java.simpleName
 
-    abstract var layoutResourceId: Int
     private var mLoader: LoadingListener? = null
     abstract val viewModel: VM
 
@@ -26,8 +29,11 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(layoutResourceId, container, false)
+        _binding = getViewBinding()
+        return binding.root
     }
+
+    abstract fun getViewBinding(): VB
 
     @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {

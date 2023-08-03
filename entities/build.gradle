@@ -49,6 +49,7 @@ dependencies {
     //Room
     implementation(Androidx.room_runtime)
     implementation(Androidx.room_ktx)
+    implementation(Androidx.workKtx)
     implementation 'androidx.test.ext:junit-ktx:1.1.5'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'junit:junit:4.12'

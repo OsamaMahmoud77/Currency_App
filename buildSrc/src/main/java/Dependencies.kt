@@ -14,7 +14,7 @@ object Versions {
     val legacy_version = "1.0.0"
     val room_version = "2.2.5"
     val constraintlayout_version = "1.1.3"
-    val material_version = "1.3.0-alpha01"
+    val material_version = "1.2.1"
     val retrofit2_version = "2.6.1"
     val okhttp3_version = "3.11.0"
     val converter_gson_version = "2.4.0"
@@ -34,6 +34,7 @@ object Versions {
     val mockitoKotlinVersion = "1.5.0"
     val activityKtxVersion = "1.2.0-alpha05"
     val fragmentKtxVersion = "1.3.0-alpha05"
+    val workKtxVersion = "2.7.1"
 }
 
 
@@ -67,28 +68,29 @@ object Androidx {
     val multidex = "androidx.multidex:multidex:${Versions.multidex_version}"
     val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy_version}"
     val lifecycle_compiler_kapt =
-            "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle_version}"
+        "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle_version}"
     val ifecycle_reactivestreams =
-            "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.lifecycle_version}"
+        "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.lifecycle_version}"
     val lifecycle_common =
-            "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle_version}"
+        "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle_version}"
     val lifecycle_runtime =
-            "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle_version}"
+        "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle_version}"
     val lifecycle_livedata =
-            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle_version}"
+        "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle_version}"
     val constraintlayout =
-            "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout_version}"
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout_version}"
     val navigation_fragment =
-            "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
+        "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
     val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
     val room_runtime = "androidx.room:room-runtime:${Versions.room_version}"
     val room_ktx = "androidx.room:room-ktx:${Versions.room_version}"
     val room_compiler_kapt = "androidx.room:room-compiler:${Versions.room_version}"
     val lifecycle_viewmodel =
-            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
 
-    val activityKtx =  "androidx.activity:activity-ktx:${Versions.activityKtxVersion}"
-    val fragmentKtx =  "androidx.fragment:fragment-ktx:${Versions.fragmentKtxVersion}"
+    val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtxVersion}"
+    val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtxVersion}"
+    val workKtx = "androidx.work:work-runtime-ktx:${Versions.workKtxVersion}"
 }
 
 object Material {
@@ -103,9 +105,9 @@ object Retrofit {
     val retrofit2 = "com.squareup.retrofit2:retrofit:${Versions.retrofit2_version}"
     val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.okhttp3_version}"
     val converter_gson =
-            "com.squareup.retrofit2:converter-gson:${Versions.converter_gson_version}"
+        "com.squareup.retrofit2:converter-gson:${Versions.converter_gson_version}"
     val logging_interceptor =
-            "com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor_version}"
+        "com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor_version}"
 }
 
 object Gson {
@@ -115,13 +117,13 @@ object Gson {
 object Coroutines {
     val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines_version}"
     val android =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_version}"
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines_version}"
 }
 
 object Groupie {
     val groupie = "com.xwray:groupie:${Versions.groupie_version}"
     val groupie_extension =
-            "com.xwray:groupie-kotlin-android-extensions:${Versions.groupie_version}"
+        "com.xwray:groupie-kotlin-android-extensions:${Versions.groupie_version}"
 }
 
 object Hilt {
@@ -140,11 +142,11 @@ object TestLib {
     val mockito_kotlin = "com.nhaarman:mockito-kotlin-kt1.1:${Versions.mockitoKotlinVersion}"
 }
 
-object WorkManager{
+object WorkManager {
     val workManager = "androidx.work:work-runtime-ktx:${Versions.work_version}"
 }
 
-object SharedPreference{
+object SharedPreference {
     val sharedPreference = "com.github.yehiahd:FastSave-Android:${Versions.sharedPreference}"
 }
 

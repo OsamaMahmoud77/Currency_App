@@ -36,8 +36,8 @@ android {
     }
 
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -69,6 +69,7 @@ dependencies {
     implementation(Androidx.navigation_fragment)
     implementation(Androidx.navigation_ui)
     implementation(Androidx.lifecycle_viewmodel)
+    implementation(Androidx.workKtx)
 
     //Material
     implementation(Material.material)
