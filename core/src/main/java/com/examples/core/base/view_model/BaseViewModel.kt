@@ -15,14 +15,14 @@ import javax.inject.Inject
 
 
 open class BaseViewModel @Inject constructor() : ViewModel() {
-    private val isLoading: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
-    val isLoadingLiveData: MutableLiveData<Boolean> by lazy { isLoading }
+    private val isLoading: MutableLiveData<Boolean> = MutableLiveData<Boolean>()
+    val isLoadingLiveData: MutableLiveData<Boolean> = isLoading
 
-    private val error: MutableLiveData<ErrorModel> by lazy { MutableLiveData<ErrorModel>() }
-    val errorLiveData: LiveData<ErrorModel> by lazy { error }
+    private val error: MutableLiveData<ErrorModel>  = MutableLiveData<ErrorModel>()
+    val errorLiveData: LiveData<ErrorModel> = error
 
-    private val cancellationMessage: MutableLiveData<String> by lazy { MutableLiveData<String>() }
-    val cancellationMsgLiveData: LiveData<String> by lazy { cancellationMessage }
+    private val cancellationMessage: MutableLiveData<String> = MutableLiveData<String>()
+    val cancellationMsgLiveData: LiveData<String> = cancellationMessage
 
     fun setLoading(isLoading: Boolean) {
         this.isLoading.value = isLoading

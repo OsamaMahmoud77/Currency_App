@@ -142,9 +142,6 @@ object TestLib {
     val mockito_kotlin = "com.nhaarman:mockito-kotlin-kt1.1:${Versions.mockitoKotlinVersion}"
 }
 
-object WorkManager {
-    val workManager = "androidx.work:work-runtime-ktx:${Versions.work_version}"
-}
 
 object SharedPreference {
     val sharedPreference = "com.github.yehiahd:FastSave-Android:${Versions.sharedPreference}"

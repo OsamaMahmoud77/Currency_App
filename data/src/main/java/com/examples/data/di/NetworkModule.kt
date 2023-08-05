@@ -1,5 +1,6 @@
 package com.examples.data.di
 
+import com.examples.data.BuildConfig
 import com.examples.data.restful.ApiService
 import com.examples.data.restful.Config
 import com.examples.data.source.cloud.BaseCloudRepository
@@ -43,10 +44,15 @@ object NetworkModule {
     @Provides
     @Singleton
     fun providesOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+        val interceptor = HttpLoggingInterceptor()
         return OkHttpClient.Builder()
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
+            .apply {
+                connectTimeout(60, TimeUnit.SECONDS)
+                writeTimeout(60, TimeUnit.SECONDS)
+                readTimeout(60, TimeUnit.SECONDS)
+                if (BuildConfig.DEBUG)
+                    this.addInterceptor(interceptor)
+            }
             .addInterceptor { chain ->
                 val request = chain.request() //original request
                 val url = request.url().newBuilder() //modified url

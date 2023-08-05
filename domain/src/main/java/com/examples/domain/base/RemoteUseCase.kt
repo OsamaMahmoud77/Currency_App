@@ -12,7 +12,7 @@ typealias CompletionBlock<T> = RemoteUseCase.Request<T>.() -> Unit
  * @type R DTO result
  * @type FR(final result) mapped DTO to BO
  */
-abstract class RemoteUseCase<P, R, FR>(val errorUtil: CloudErrorMapper) {
+abstract class RemoteUseCase<P, R, FR>(private val errorUtil: CloudErrorMapper) {
 
     private var parentJob: Job = Job()
     private var backgroundContext: CoroutineContext = Dispatchers.IO

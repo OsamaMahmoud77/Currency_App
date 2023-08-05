@@ -35,24 +35,23 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
 
     abstract fun getViewBinding(): VB
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         with(viewModel) {
-            errorLiveData.observe(viewLifecycleOwner, Observer {
+            errorLiveData.observe(viewLifecycleOwner) {
                 Toast.makeText(context, "${it?.message}", Toast.LENGTH_LONG).show()
-            })
+            }
 
-            cancellationMsgLiveData.observe(viewLifecycleOwner, Observer {
+            cancellationMsgLiveData.observe(viewLifecycleOwner) {
                 Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-            })
+            }
 
-            isLoadingLiveData.observe(viewLifecycleOwner, Observer {
+            isLoadingLiveData.observe(viewLifecycleOwner) {
                 showLoading(it)
                 Log.d(TAG, "Loading observer is called")
-            })
+            }
         }
-
     }
 
     open fun showLoading(show: Boolean) {

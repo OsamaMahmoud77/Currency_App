@@ -2,11 +2,11 @@ package com.example.currency.ui.activity
 
 import android.os.Bundle
 import com.example.currency.R
-import com.example.currency.databinding.ActivityMainBinding
 import com.examples.core.base.activity.PermissionsActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : PermissionsActivity() {
-    private lateinit var binding: ActivityMainBinding
 
     override var permissions: Array<String> = arrayOf(
         android.Manifest.permission.WRITE_EXTERNAL_STORAGE,

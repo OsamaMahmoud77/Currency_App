@@ -3,16 +3,16 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android' version '2.44' apply false
+    id 'dagger.hilt.android.plugin'
     id("androidx.navigation.safeargs")
 }
 
 android {
-    compileSdkVersion (Android.compileSdkVersion)
+    compileSdkVersion(Android.compileSdkVersion)
 
     defaultConfig {
-        minSdkVersion (Android.minSdkVersion)
-        targetSdkVersion (Android.targetSdkVersion)
+        minSdkVersion(Android.minSdkVersion)
+        targetSdkVersion(Android.targetSdkVersion)
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -92,10 +92,8 @@ dependencies {
     kapt(Hilt.kapt_hilt_android)
     kapt(Hilt.kapt_hilt_compiler)
 
-    //WorkManager
-    implementation(WorkManager.workManager)
 
-    
+
     //Gson
     implementation(Gson.gson)
 
